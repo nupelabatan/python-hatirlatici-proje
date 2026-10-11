@@ -19,4 +19,4 @@ Algılanan planlar, kullanıcı onayının ardından SQLite veritabanına kayded
 * Ayrıştırma Modülü: Regex 
 * Arayüz (GUI):
 * Zamanlama & Bildirim: APScheduler, Telegram Bot API
-*
+
