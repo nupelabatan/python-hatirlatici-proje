@@ -20,3 +20,31 @@ Algılanan planlar, kullanıcı onayının ardından SQLite veritabanına kayded
 * Arayüz (GUI):
 * Zamanlama & Bildirim: APScheduler, Telegram Bot API
 
+```mermaid
+erDiagram
+    KATEGORILER ||--o{ GOREVLER : icerir
+    GOREVLER ||--o{ BILDIRIM_LOGLARI : tetikler
+
+    KATEGORILER {
+        int kategori_id PK
+        text kategori_adi
+        text renk_kodu
+    }
+
+    GOREVLER {
+        int gorev_id PK
+        int kategori_id FK
+        text gorev_metni
+        text hedef_zaman
+        text durum
+        text olusturulma_zamani
+    }
+
+    BILDIRIM_LOGLARI {
+        int log_id PK
+        int gorev_id FK
+        text gonderim_zamani
+        text kanal
+        int kullanici_onayi
+    }
+```
